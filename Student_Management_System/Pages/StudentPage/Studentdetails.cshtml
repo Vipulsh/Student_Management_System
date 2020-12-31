@@ -1,0 +1,24 @@
+﻿@page
+@model Student_Management_System.Pages.StudentPage.StudentdetailsModel
+@{
+}
+
+
+<form method="post">
+
+    <div class="form-control">
+        <label>Name:</label>
+
+
+        <input asp-for="Student.Name" value="@Model.Student.Name" />
+    </div>
+    <div class="form-control">
+
+        <label>Age:</label>
+
+
+        <input asp-for="Student.Age" value="@Model.Student.Age" />
+    </div>
+    <input type="submit" class="btn-light btn-primary">
+
+</form>

@@ -1,0 +1,46 @@
+﻿@page
+@model Student_Management_System.Pages.Students.ShowAllStudentsModel
+@{
+}
+
+<form method="post">
+    <table>
+
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Marks
+            </th>
+        </tr>
+
+        @foreach (var stu in Model.Allstudents.RelatedStudentsList)
+        {
+            <tr>
+                <td>
+                    @stu.Name
+                </td>
+
+                <td>
+                    @stu.Subject
+                </td>
+                <td>
+                    @stu.Marks
+                </td>
+                <td>
+                    <input type="submit" value="Edit" asp-page-handler="Edit" asp-route-id="@stu.StudentId"/>
+                    
+                </td>
+
+                <td>
+                    <input type="submit" value="Delete" asp-page-handler="Delete" asp-route-id="@stu.StudentId" />
+                </td>
+            </tr>
+        }
+
+    </table>
+</form>

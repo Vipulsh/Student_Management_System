@@ -1,0 +1,43 @@
+﻿@page
+@model Student_Management_System.Pages.StudentPage.GetSubjectToppersModel
+@{
+}
+
+<form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    Subject:
+                </th>
+                <th>
+                    Marks:
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            @foreach(var student in Model.studentdetails.RelatedStudentsList)
+            { 
+                <tr>
+                    <td>
+                        @student.Name
+                    </td>
+                    <td>
+                        @student.Subject
+                    </td>
+                    <td>
+                        @student.Marks
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+
+</form>

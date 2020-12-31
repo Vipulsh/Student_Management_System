@@ -1,0 +1,61 @@
+﻿@page
+@model Student_Management_System.Pages.Teacher.AddStudentMarksModel
+@{
+}
+
+
+<p>Add Student Marks</p>
+
+<form method="post" class="form-control">
+
+    <div class="col-md-12">
+        <div class="col-md-3">
+
+            StudentName :
+
+        </div>
+
+        <div class="col-md-3">
+
+            @Html.DropDownListFor(@Model => @Model.relatedStudents.student.StudentId, new SelectList(@Model.relatedStudents.RelatedStudentsList, "StudentId", "Name"), "--Select Student--"
+
+, new { @class = "form-control", @id = "selectedStudent" })
+
+        </div>
+
+        <br />
+        <div class="col-md-3">
+
+            Subject :
+
+        </div>
+
+        <div class="col-md-3">
+
+            @Html.DropDownListFor(@Model => @Model.relatedStudents.student.SubjectId, new SelectList(@Model.relatedStudents.RelatedSubjectsList, "Id", "Name"), "--Select Subject--"
+
+, new { @class = "form-control", @id = "selectedSubject" })
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            Marks :
+
+        </div>
+
+        <div class="col-md-3">
+
+            @Html.EditorFor(@Model => @Model.relatedStudents.student.Marks, new { @class = "form-control" })
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <input type="submit" class="btn-light btn-primary">
+        </div>
+
+    </div>
+</form>
